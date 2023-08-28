@@ -1,0 +1,37 @@
+/* Product section */
+
+.product-detailed select {
+    display: block;
+    padding: 5px 10px;
+}
+
+.product-detailed input {
+    width: 60px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.order-btn {
+    background: orangered;
+    width: 140px;
+    height: 40px;
+    border: 1px solid orangered;
+    border-radius: 10px;
+    color: #fff;
+    opacity: 1;
+    transition: 0.3s all;
+}
+
+.order-btn:hover {
+    background-color: orange;
+    border: 1px solid orange;
+}
+
+hr {
+    width: 200px;
+    color: orangered;
+}

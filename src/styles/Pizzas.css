@@ -1,0 +1,113 @@
+/* Pizza Search Container */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#search-container {
+    background-color: transparent;
+    width: 30%;
+    border-bottom: 2px solid orange;
+    padding: 10px;
+}
+
+#search-input {
+    width: 100%;
+}
+
+#search {
+    align-self: center;
+    margin-left: 30px;
+    height: 40px;
+    width: 95px;
+    border-radius: 15px;
+    background-color: orange;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#search:hover {
+    background-color: transparent;
+    border: 1px solid orange;
+    color: orange;
+}
+
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-value {
+    margin-right: 25px;
+    padding: 3px 15px;
+    border: 2px solid orange;
+    border-radius: 18px;
+    background-color: transparent;
+    color: black;
+    transition: 0.4s;
+}
+
+.button-value:hover {
+    background-color: orange;
+}
+
+.active {
+    background-color: orangered;
+}
+
+/* Products */
+
+.products {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-card {
+    background-color: rgb(230, 230, 198);
+    margin-top: 30px;
+    padding: 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 5px rgb(136, 136, 83);
+}
+
+.linkCard {
+    text-decoration: none;
+    color: black;
+}
+
+#product-cart {
+    align-self: flex-end;
+    width: 15%;
+    transition: 0.2s;
+}
+
+#product-cart:hover {
+    transform: scale(1.35);
+}
+
+#product-img {
+    width: 100%;
+}
