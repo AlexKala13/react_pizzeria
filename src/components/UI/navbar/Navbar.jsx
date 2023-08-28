@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../modal/Modal';
+import LogNavMenu from '../loggingMenu/LogNavMenu';
 
 const Navbar = () => {
-    const [modalVisible, setModalVisible] = useState(false);
 
     return (
         <div>
@@ -23,11 +22,7 @@ const Navbar = () => {
                                     <Link class="nav_item"><li><a href="#">Contact Us</a></li></Link>
                                     <Link class="nav_item"><li><a href="#">Search</a></li></Link>
                                 </ul>
-                                <ul class="loggingmenu d-flex">
-                                    <button onClick={() => setModalVisible(true)} class="nav_item logging"><li><a href="#">Log In</a></li></button>
-                                    <Link class="nav_item logging"><li><a href="#">Sign In</a></li></Link>
-                                </ul>
-                                <Modal visible={modalVisible} setVisible={setModalVisible} />    
+                                <LogNavMenu/>
                             </nav>
                         </div>
                     </div>
