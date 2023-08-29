@@ -1,17 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Modal from '../modal/Modal';
+import { AuthContext } from '../../context';
+import { Link } from 'react-router-dom';
 
 const LogNavMenu = () => {
     const [modalVisible, setModalVisible] = useState(false);
+    const { isAuth, setIsAuth } = useContext(AuthContext);
+
+    const logOut = event => {
+        event.preventDefault();
+        setIsAuth(false);
+        localStorage.setItem('auth', 'false');
+    }
 
     return (
-        <div>
-            <ul class="loggingmenu d-flex">
-                <button onClick={() => setModalVisible(true)} class="nav_item logging"><li><a href="#">Log In</a></li></button>
-                <button class="nav_item logging"><li><a href="#">Sign In</a></li></button>
-            </ul>
-            <Modal visible={modalVisible} setVisible={setModalVisible} />
-        </div>
+        isAuth
+            ?
+            <div>
+                <ul className="loggingmenu d-flex">
+                    <Link className="nav_item"><li><a href="#">Profile</a></li></Link>
+                    <button onClick={logOut} className="nav_item"><li><a href="#">Log Out</a></li></button>
+                </ul>
+            </div>
+            :
+            <div>
+                <ul className="loggingmenu d-flex">
+                    <button onClick={() => setModalVisible(true)} className="nav_item logging"><li><a href="#">Log In</a></li></button>
+                    <button className="nav_item logging"><li><a href="#">Sign In</a></li></button>
+                </ul>
+                <Modal visible={modalVisible} setVisible={setModalVisible} />
+            </div>
     );
 };
 

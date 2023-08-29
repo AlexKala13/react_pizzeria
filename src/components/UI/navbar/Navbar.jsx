@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import LogNavMenu from '../loggingMenu/LogNavMenu';
 
 const Navbar = () => {
-
     return (
         <div>
             <header class="menu-bar">

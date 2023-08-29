@@ -12,8 +12,6 @@ const Product = () => {
         try {
             const response = await PostService.getProductById(APIS.getById, params.id);
             setProduct(response.data.data);
-            console.log(response);
-            console.log(response.data);
         } catch (error) {
             console.error('Product fetch error', error);
         }
