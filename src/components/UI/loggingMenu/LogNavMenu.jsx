@@ -10,7 +10,8 @@ const LogNavMenu = () => {
     const logOut = event => {
         event.preventDefault();
         setIsAuth(false);
-        localStorage.setItem('auth', 'false');
+        localStorage.removeItem('auth');
+        localStorage.removeItem('token');
     }
 
     return (

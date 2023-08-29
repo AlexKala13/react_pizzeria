@@ -6,6 +6,7 @@ import { APIS } from '../../../API/ApiUrls';
 
 const Modal = ({ visible, setVisible }) => {
     const { isAuth, setIsAuth } = useContext(AuthContext);
+    const [wrongUserMessage, setWrongUserMessage] = useState('');
 
     const [user, setUser] = useState({
         Email: '',
@@ -29,7 +30,7 @@ const Modal = ({ visible, setVisible }) => {
                 localStorage.setItem('auth', 'true');
                 setVisible(false);
             } else {
-                
+                setWrongUserMessage('Wrong user');
             }
         } catch (error) {
             console.log(error);
@@ -59,6 +60,7 @@ const Modal = ({ visible, setVisible }) => {
                             className={styles.loginInput}
                             type="text"
                             placeholder="Password" />
+                            <h4 className='wrongUserAlert'>{wrongUserMessage}</h4>
                         <button type="submit" className={styles.loginBtn}>Log In</button>
                     </form>
                     <div className={styles.pop_up_close} onClick={closeModal}>close</div>
