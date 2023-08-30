@@ -19,7 +19,7 @@ const LogNavMenu = () => {
             ?
             <div>
                 <ul className="loggingmenu d-flex">
-                    <Link className="nav_item"><li><a href="#">Profile</a></li></Link>
+                    <Link to="/profile" className="nav_item"><li><a href="#">Profile</a></li></Link>
                     <button onClick={logOut} className="nav_item"><li><a href="#">Log Out</a></li></button>
                 </ul>
             </div>
@@ -27,7 +27,7 @@ const LogNavMenu = () => {
             <div>
                 <ul className="loggingmenu d-flex">
                     <button onClick={() => setModalVisible(true)} className="nav_item logging"><li><a href="#">Log In</a></li></button>
-                    <button className="nav_item logging"><li><a href="#">Sign In</a></li></button>
+                    <Link to="/register" className="nav_item"><li><a href="#">Sign In</a></li></Link>
                 </ul>
                 <Modal visible={modalVisible} setVisible={setModalVisible} />
             </div>

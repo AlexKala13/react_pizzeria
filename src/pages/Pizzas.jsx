@@ -5,6 +5,12 @@ import ProductList from '../components/ProductList';
 
 const Pizzas = () => {
     const [activeFilter, setActiveFilter] = useState('all');
+    const [searchInput, setSearchInput] = useState('');
+
+    const handleSearchInputChange = (event) => {
+        setSearchInput(event.target.value);
+    };
+
     return (
         <div>
             <div className="container">
@@ -12,14 +18,19 @@ const Pizzas = () => {
                     <div className="col-xl-12">
                         <div className="wrapper">
                             <div id="search-container">
-                                <input type="text" id="search-input" placeholder="Search pizza by name..." />
+                                <input
+                                    type="text"
+                                    id="search-input"
+                                    placeholder="Search pizza by name..."
+                                    value={searchInput}
+                                    onChange={handleSearchInputChange}
+                                />
                             </div>
-                            <button id="search">Search</button>
                         </div>
                     </div>
                 </div>
                 <ProductFilter setActiveFilter={setActiveFilter} />
-                <ProductList activeFilter={activeFilter} />
+                <ProductList activeFilter={activeFilter} searchInput={searchInput} />
             </div>
         </div>
     );

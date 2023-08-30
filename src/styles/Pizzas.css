@@ -26,23 +26,6 @@
     width: 100%;
 }
 
-#search {
-    align-self: center;
-    margin-left: 30px;
-    height: 40px;
-    width: 95px;
-    border-radius: 15px;
-    background-color: orange;
-    color: #fff;
-    transition: 0.3s;
-}
-
-#search:hover {
-    background-color: transparent;
-    border: 1px solid orange;
-    color: orange;
-}
-
 .buttons {
     margin-top: 35px;
     display: flex;

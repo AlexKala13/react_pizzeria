@@ -3,7 +3,7 @@ import PostService from '../API/PostService';
 import { APIS } from '../API/ApiUrls';
 import { Link } from 'react-router-dom';
 
-function PizzaBlocks({ activeFilter }) {
+function PizzaBlocks({ activeFilter, searchInput }) {
     const [pizzas, setPizzas] = useState([]);
 
     async function fetchProducts() {
@@ -21,11 +21,15 @@ function PizzaBlocks({ activeFilter }) {
 
     const filteredPizzas = activeFilter === 'all' ? pizzas : pizzas.filter(pizza => pizza.filter === activeFilter);
 
+    const searchFilteredPizzas = filteredPizzas.filter(pizza =>
+        pizza.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+
     return (
         <section className="products">
             <div className="container">
                 <div className="row filter justify-content-center">
-                    {filteredPizzas.map(pizza => (
+                    {searchFilteredPizzas.map(pizza => (
                         <div key={pizza.id} filter={pizza.filter} className="col-xl-4 col-md-3">
                             <Link to={`/pizzas/${pizza.id}`} className="linkCard">
                                 <div className="product-card">
