@@ -29,4 +29,16 @@ export default class PostService {
             console.log(error);
         }
     }
+
+    static async registerUser(apiUrl, user){
+        try {
+            const response = await axios.post(apiUrl, user);
+
+            if (response.status === 200 || response.status === 204) {
+                return true;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 };

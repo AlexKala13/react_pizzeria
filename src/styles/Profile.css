@@ -1,0 +1,38 @@
+/* PROFILE STYLES */
+
+.profile_section {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.profile_section_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 30px 80px;
+    background-color: rgb(230, 230, 198);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 26px;
+    color: orange;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.profile_section_card:hover {
+    box-shadow: 1px 1px 5px orangered;
+    color: orangered;
+}
+
+.profile_enter_btn {
+    background-color: orange;
+    text-decoration: none;
+    color: #fff;
+}
+
+.profile_enter_btn:hover {
+    background-color: orangered;
+    color: #fff;
+}
